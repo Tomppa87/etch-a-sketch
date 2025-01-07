@@ -5,6 +5,13 @@ body {
     background-color: lightcoral;
 }
 
+.buttonContainer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
 .container {
     align-self: center;
     display: flex;
@@ -13,7 +20,7 @@ body {
     width: 700 px;
     background-color: white;
     justify-content: space-around;
-    border: 2px, solid, black;
+    /*border: 2px, solid, black;*/
    
 }
 

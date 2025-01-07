@@ -32,7 +32,6 @@ function createGrid(gridSideCount) {
 
 createGrid(defaultGridSize)
 
-//Remember to make this dynamic based on grid size if changed
 function clearGrid() {
     for (let i = 0; i < container.children.length; i++) {
         console.log(container.children[i])
@@ -53,7 +52,7 @@ clearBtn.addEventListener("click", clearGrid)
 const newGridBtn = document.getElementById("newGridButton");
 newGridBtn.addEventListener("click", function() {
     let newAmount = prompt("How many grids per side? (Max 100)") 
-    if (newAmount > 100) {
+    if ((newAmount > 100) || (newAmount <= 0)) {
         alert("ERROR");
         return 0;
     } 
@@ -63,7 +62,6 @@ newGridBtn.addEventListener("click", function() {
 
 function newGrid(input) {
     container.replaceChildren()
-    //container.appendChild(document.createElement("div"))
     for (let i = 0; i < input; i++) {
         let row = document.createElement("div");
         row.id = "row" +i;
