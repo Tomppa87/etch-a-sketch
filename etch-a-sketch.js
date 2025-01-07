@@ -78,3 +78,19 @@ function newGrid(input) {
         container.appendChild(row)
     }
 }
+let multiColorStatus = false
+
+const multiColor = document.getElementById("colorMode")
+multiColor.addEventListener("click", function() {
+    if (multiColorStatus === false) {
+        multiColor.style.backgroundColor = "#00FFFF"
+        multiColorStatus = true
+
+    }
+    else {
+        multiColor.style.backgroundColor = ""
+        multiColorStatus = false
+    }
+    
+
+})
