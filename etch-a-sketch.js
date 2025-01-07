@@ -55,10 +55,14 @@ container.addEventListener("mouseover", function(event) {
     if (multiColorStatus === true) {
         event.target.style.backgroundColor = randomColour()
     }
-    else {
+
+    else if (darkModeStatus === true) {
+        let opacity = Number(event.target.style.opacity);
+        event.target.style.opacity = opacity >= 1 ? "1" : opacity + 0.1 + "";
+        event.target.style.backgroundColor = "black";
+    }   else {
         event.target.style.backgroundColor = "purple"
-    }
-    
+    }    
 })
 
 const clearBtn = document.getElementById("clearButton")
@@ -105,6 +109,21 @@ multiColor.addEventListener("click", function() {
     else {
         multiColor.style.backgroundColor = ""
         multiColorStatus = false
+    }
+    
+})
+let darkModeStatus = false
+
+const darkMode = document.getElementById("darkModeButton")
+darkMode.addEventListener("click", function() {
+    if (darkModeStatus === false) {
+        darkMode.style.backgroundColor = "#8B008B"
+        darkModeStatus = true
+
+    }
+    else {
+        darkMode.style.backgroundColor = ""
+        darkModeStatus = false
     }
     
 
