@@ -42,8 +42,23 @@ function clearGrid() {
     }       
 };
 
+function randomColour() {
+    let r = Math.floor(Math.random()*256);
+    let g = Math.floor(Math.random()*256);
+    let b = Math.floor(Math.random()*256);
+    return `rgb(${r},${g},${b})`
+    
+}
+
+
 container.addEventListener("mouseover", function(event) {
-    event.target.style.backgroundColor = "purple"
+    if (multiColorStatus === true) {
+        event.target.style.backgroundColor = randomColour()
+    }
+    else {
+        event.target.style.backgroundColor = "purple"
+    }
+    
 })
 
 const clearBtn = document.getElementById("clearButton")
