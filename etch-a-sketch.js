@@ -53,6 +53,10 @@ clearBtn.addEventListener("click", clearGrid)
 const newGridBtn = document.getElementById("newGridButton");
 newGridBtn.addEventListener("click", function() {
     let newAmount = prompt("How many grids per side? (Max 100)") 
+    if (newAmount > 100) {
+        alert("ERROR");
+        return 0;
+    } 
     
     newGrid(newAmount)
 })
